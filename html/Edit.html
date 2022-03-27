@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href = "../css/CreateUser.css" rel = "stylesheet">
+  <title> Wallet </title>
+</head>
+  <body>
+    <form action = "CreateUser" method=" post ">
+      <div class = "container">
+        <label for = "name">
+          <b>  Username  </b>
+        </label>
+        <input type = "text" placeholder = "Enter Username" name = "uname">
+
+
+        <label for = "pas">
+          <b> Password </b> 
+        </label>
+        <input type = "password" placeholder = "Enter Password" name = "pas">
+
+        <label for = "pas">
+          <b> Confrim password </b> 
+        </label>
+        <input type = "password" placeholder = "Confrim password" name = "pas">
+
+        <p> Select user type </p>
+        <div>
+           <input type = "checkbox" id = "Admin" name = "pas" checked>
+          <label for = "pas"> Admin </label>
+        </div>
+        <div>
+          <input type = "checkbox" id = "Common user" name = "pas">
+          <label for = "pas"> Common user </label>
+       </div>
+
+        <button type = "submit" onclick = "window.location.href = '../html/Main.html'"> Change </button>
+        <button type = "reset"> Cancel </button>
+      </div>
+    </form>
+  </body>
+</html>
