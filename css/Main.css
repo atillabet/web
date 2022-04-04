@@ -27,7 +27,14 @@ button:hover {
 }
 
 .top{
-  text-align: right;
+  justify-content: right;
+  display:inline-block;
+  text-decoration:none;
+  font-size:20px;
+  color:#ff6347;
+  transition-duration:0.5s;
+  border-bottom:none;
+  padding-bottom:0;
 }
 
 .img {
