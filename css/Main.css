@@ -1,3 +1,4 @@
+
 form {
   border: 3px solid #f1f1f1;
 }
@@ -21,12 +22,12 @@ button {
   width: 30%;
 }
 
-.top { 
-  text-align: right;
-}
-
 button:hover {
   opacity: 0.8;
+}
+
+.top{
+  text-align: right;
 }
 
 .img {
@@ -47,7 +48,6 @@ span.pas {
   float: right;
   padding-top: 16px;
 }
-
 
 @media screen and (max-width: 300px) {
   span.pas{
