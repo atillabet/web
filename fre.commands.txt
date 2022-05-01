@@ -1,0 +1,43 @@
+pip show flask
+pip install -r requirements.txt.
+python -m venv env
+python -m pip install flask
+pip install flask-bcrypt
+
+env\Scripts\activate.bat
+alembic revision --autogenerate
+alembic upgrade +1
+alembic downgrade -1
+python data.py
+
+Flask run
+
+http://localhost:5000/user?"username"="Tahku"&"email"="yx@gmail.com"&"password"="111111"&"phone"="380994828842"
+
+
+venv\Scripts\activate.bat
+python waitress_server.py
+http://localhost:200/api/v1/hello-world-6
+
+
+
+{
+"username" : "Hjldc",
+"email":"bfshg@gmail.com",
+"password": "acasvhv",
+"phone": "0987455426"
+}
+
+{
+"name" : "JHKD",
+"category":"AD",
+"quantity": "2",
+"status": "DS"
+}
+
+{
+"quantity" : 1,
+"status":"а",
+"User_idUser": "1",
+"Product_IdProduct": "1"
+}

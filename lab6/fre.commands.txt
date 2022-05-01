@@ -1,0 +1,5 @@
+pip show flask
+pip install -r requirements.txt.
+python -m venv env
+python -m pip install flask
+venv2\Scripts\activate.bat
