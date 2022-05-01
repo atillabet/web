@@ -1,4 +1,4 @@
-const login_url = 'http://localhost:5000/user/login'
+const login_url = 'http://localhost:6996/main'
 
 async function login(id) {
     var inputs = document.getElementById(id).elements;
