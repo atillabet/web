@@ -25,7 +25,7 @@ async function login(id) {
         if (response.status == 200) {
             var token = res.access_token
             localStorage.setItem('token', token);
-            window.location.replace("html/Main.html");
+            window.location.replace("./html/Main.html");
         }
         else {
             alert(":(((") // eslint-disable-line no-alert, quotes, semi
