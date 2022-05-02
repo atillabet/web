@@ -1,7 +1,7 @@
 async function register(id) {
 	alert("aaaaa");
     const inputs = document.getElementById(id).elements;
-    var firstName = inputs'firstName'].value;
+    var firstName = inputs['firstName'].value;
     var lastName = inputs['lastName'].value;
     var password = inputs['password'].value;
     var phone = inputs['phone'].value;
