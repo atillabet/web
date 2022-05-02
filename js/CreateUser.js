@@ -12,12 +12,11 @@ submitButton.onclick = e => {
 
     if (form.checkValidity()) {
         let request_body = {
-            username: form["username"].value,
-            first_name: form["first_name"].value,
-            last_name: form["last_name"].value,
+            firstName: form["firstName"].value,
+            lastName: form["lastName"].value,
+            phone: form["phone"].value,
             email: form["email"].value,
             password: form["password"].value,
-            role: form["role"].value
         };
         let confirm_password = form["confirm_password"].value;
 
