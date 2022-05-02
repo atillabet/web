@@ -5,10 +5,8 @@ function register(id) {
     var password = inputs['password'].value;
     var phone = inputs['phone'].value;
     var email = inputs['email'].value;
-
     var confirmPassword = inputs['confirmPassword'].value;
-    const select = document.getElementById('Status');
-    var status = select.options[select.selectedIndex].value;
+	
     if (confirmPassword != password) {
         alert("wrong");
         return 0;
