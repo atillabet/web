@@ -19,7 +19,7 @@ submitButton.onclick = e => {
         loginUser(request_body).then(response => {
             if (response.status === 200) {
                 window.localStorage.setItem('loggedIn_user', JSON.stringify(request_body));
-                window.location.href = '../templates/account.html';
+                window.location.href = '../html/main.html';
             }
             else {
                 response.text().then((data) => {
