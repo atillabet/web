@@ -1,10 +1,4 @@
-let submitButton = document.querySelector('.submit-button');
-let error = document.querySelector('.error');
-
-let current_user = window.localStorage.getItem("loggedIn_user")
-if (current_user) {
-    window.location.href = '../index.html';
-}
+let submitButton = document.querySelector('.submit');
 
 submitButton.onclick = e => {
     e.preventDefault();
@@ -20,7 +14,6 @@ submitButton.onclick = e => {
         };
 
         if (request_body['password'] !== form["confirmPassword"].value) {
-            error.innerHTML = "Passwords do not match.";
             return
         }
 
@@ -32,22 +25,7 @@ submitButton.onclick = e => {
             if (response.status === 200) {
                 window.location.href = '../index.html';
             }
-            else {
-                response.text().then((data) => {
-                    throw data;
-                }).catch(e => {
-                    if (e) {
-                        error.innerHTML = e;
-                        console.log(e);
-                    }
-                });
-            }
-        }).catch(e => {
-            console.log(e)
         })
     }
-    else {
-        error.innerHTML = "All fields are required and should be valid!";
-        console.log(e);
-    }
+
 }
