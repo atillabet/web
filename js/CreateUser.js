@@ -14,7 +14,7 @@ submitButton.onclick = e => {
         };
 
         if (request_body['password'] !== form["confirmPassword"].value) {
-            return
+            return;
         }
 
         fetch('http://localhost:5000/user', {
