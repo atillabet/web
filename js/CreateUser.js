@@ -1,31 +1,30 @@
-let submitButton = document.querySelector('.submit');
+async function register(id) {
+    inputs = document.getElementById(id).elements;
+    var firstName = inputs['firstName'].value;
+    var lastName = inputs['lastName'].value;
+    var password = inputs['password'].value;
+    var phone = inputs['phone'].value;
+    var email = inputs['email'].value;
 
-submitButton.onclick = e => {
-    e.preventDefault();
-    let form = document.querySelector('.form');
-
-    if (form.checkValidity()) {
-        let request_body = {
-            firstName: form["firstName"].value,
-            lastName: form["lastName"].value,
-            phone: form["phone"].value,
-            email: form["email"].value,
-            password: form["password"].value,
-        };
-
-        if (request_body['password'] !== form["confirmPassword"].value) {
-            return;
-        }
-
-        fetch('http://localhost:5000/user', {
-            method: 'POST',
-            body: JSON.stringify(request_body),
-            headers: {'Content-Type': 'application/json'}
-        }).then(response => {
-            if (response.status === 200) {
-                window.location.href = '../index.html';
-            }
-        })
+    var confirmPassword = inputs['confirmPassword'].value;
+    const select = document.getElementById('Status');
+    var status = select.options[select.selectedIndex].value;
+    if (confirmPassword != password) {
+        alert("you already has forgot your possword :/");
+        return 0;
     }
-
+    var data = {
+        "firstName": firstName,
+        "lastName": lastName,
+        "password": password,
+        "phone": phone,
+		"email" : email,
+    }
+    fetch('http://localhost:5000/user', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    };
 }
