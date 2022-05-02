@@ -1,12 +1,10 @@
 async function register(id) {
-	alert("aaaaa");
-    const inputs = document.getElementById(id).elements;
-    var firstName = inputs['firstName'].value;
-    var lastName = inputs['lastName'].value;
-    var password = inputs['password'].value;
-    var phone = inputs['phone'].value;
-    var email = inputs['email'].value;
-    var confirmPassword = inputs['confirmPassword'].value;
+    var firstName = document.getElementById('firstName').value;
+    var lastName = document.getElementById('lastName').value;
+    var password = document.getElementById('password').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+    var confirmPassword = document.getElementById('confirmPassword').value;
 	
     if (confirmPassword != password) {
         alert("wrong");
