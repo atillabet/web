@@ -3,7 +3,7 @@ let error = document.querySelector('.error');
 
 let current_user = window.localStorage.getItem("loggedIn_user")
 if (current_user) {
-    window.location.href = '../html/main.html';
+    window.location.href = '../html/Main.html';
 }
 
 submitButton.onclick = e => {
@@ -19,7 +19,7 @@ submitButton.onclick = e => {
         loginUser(request_body).then(response => {
             if (response.status === 200) {
                 window.localStorage.setItem('loggedIn_user', JSON.stringify(request_body));
-                window.location.href = '../html/main.html';
+                window.location.href = '../html/Main.html';
             }
             else {
                 response.text().then((data) => {
