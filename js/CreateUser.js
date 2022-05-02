@@ -10,7 +10,7 @@ function register(id) {
     const select = document.getElementById('Status');
     var status = select.options[select.selectedIndex].value;
     if (confirmPassword != password) {
-        alert("you already has forgot your possword :/");
+        alert("wrong");
         return 0;
     }
     var data = {
