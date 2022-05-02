@@ -1,4 +1,4 @@
-async function register(id) {
+function register(id) {
     inputs = document.getElementById(id).elements;
     var firstName = inputs['firstName'].value;
     var lastName = inputs['lastName'].value;
