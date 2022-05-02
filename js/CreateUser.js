@@ -3,7 +3,7 @@ let error = document.querySelector('.error');
 
 let current_user = window.localStorage.getItem("loggedIn_user")
 if (current_user) {
-    window.location.href = 'html/Main.html';
+    window.location.href = '../index.html';
 }
 
 submitButton.onclick = e => {
@@ -13,13 +13,26 @@ submitButton.onclick = e => {
     if (form.checkValidity()) {
         let request_body = {
             username: form["username"].value,
-            password: form["password"].value
+            first_name: form["first_name"].value,
+            last_name: form["last_name"].value,
+            email: form["email"].value,
+            password: form["password"].value,
+            role: form["role"].value
         };
+        let confirm_password = form["confirm_password"].value;
 
-        loginUser(request_body).then(response => {
+        if (request_body['password'] !== confirm_password) {
+            error.innerHTML = "Passwords do not match.";
+            return
+        }
+
+        fetch('http://localhost:5000/user', {
+            method: 'POST',
+            body: JSON.stringify(request_body),
+            headers: {'Content-Type': 'application/json'}
+        }).then(response => {
             if (response.status === 200) {
-                window.localStorage.setItem('loggedIn_user', JSON.stringify(request_body));
-                window.location.href = 'html/Main.html';
+                window.location.href = '../index.html';
             }
             else {
                 response.text().then((data) => {
@@ -36,15 +49,7 @@ submitButton.onclick = e => {
         })
     }
     else {
-        error.innerHTML = "All fields should be valid!";
+        error.innerHTML = "All fields are required and should be valid!";
         console.log(e);
     }
-}
-
-let loginUser = request_body => {
-    return fetch('http://localhost:5000/user/login', {
-        method: "GET",
-        body: JSON.stringify(request_body),
-        headers: {'Content-Type': 'application/json'}
-    });
 }
