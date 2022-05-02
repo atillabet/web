@@ -3,7 +3,7 @@ let error = document.querySelector('.error');
 
 let current_user = window.localStorage.getItem("loggedIn_user")
 if (current_user) {
-    window.location.href = '../templates/account.html';
+    window.location.href = '../html/main.html';
 }
 
 submitButton.onclick = e => {
