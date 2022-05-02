@@ -1,5 +1,5 @@
-function register(id) {
-    inputs = document.getElementById(id).elements;
+async function register(id) {
+    const inputs = document.getElementById(id).elements;
     var firstName = inputs['firstName'].value;
     var lastName = inputs['lastName'].value;
     var password = inputs['password'].value;
@@ -35,7 +35,7 @@ function register(id) {
             alert(res.info);
             var result = confirm("you arent unique. please be, ok?");
             if (!result) {
-                Location.reload() // eslint-disable-line no-alert, quotes, semi
+                Location.reload()
             }
         }
     });
