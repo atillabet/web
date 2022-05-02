@@ -18,9 +18,8 @@ submitButton.onclick = e => {
             email: form["email"].value,
             password: form["password"].value,
         };
-        let confirm_password = form["confirm_password"].value;
 
-        if (request_body['password'] !== confirm_password) {
+        if (request_body['password'] !== form["confirmPassword"].value) {
             error.innerHTML = "Passwords do not match.";
             return
         }
