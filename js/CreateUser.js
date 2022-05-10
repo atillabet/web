@@ -17,24 +17,23 @@ async function register(id) {
         "phone": phone,
 		"email" : email,
     }
-    await fetch('http://localhost:5000/user', {
+    fetch("http://localhost:5000/user", {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(async (response) => {
-        var res = await response.json();
+		
+    }).then(response => {
+        var res = response.json;
         if (response.status == 200) {
-            var token = res.access_token
-            localStorage.setItem('token', token);
             window.location.replace("../index.html");
         }
         else {
             alert(res.info);
-            var result = confirm("you arent unique. please be, ok?");
+            var result = confirm("you arent unique");
             if (!result) {
-                Location.reload()
+                Location.reload();
             }
         }
     });

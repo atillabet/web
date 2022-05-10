@@ -8,20 +8,29 @@
     <form action = "CreateUser" method=" post ">
       <div class = "container">
         <label for = "name">
-          <b>  Username  </b>
+          <b>  First name  </b>
         </label>
-        <input type = "text" placeholder = "Enter Username" name = "uname">
-
-
+        <input type = "text" id = "firstName" placeholder = "Enter First name" name = "uname">
+       
+	   <label for = "name">
+          <b>  Last name  </b>
+        </label>
+        <input type = "text" id = "LastName" placeholder = "Enter Last name" name = "uname">
+		
         <label for = "pas">
           <b> Password </b> 
         </label>
-        <input type = "password" placeholder = "Enter Password" name = "pas">
+        <input type = "password" id = "Password" placeholder = "Enter Password" name = "pas">
 
         <label for = "pas">
-          <b> Confrim password </b> 
+          <b> Email </b> 
         </label>
-        <input type = "password" placeholder = "Confrim password" name = "pas">
+        <input type = "password" id = "Email" placeholder = "Enter Email" name = "pas">
+		
+		<label for = "pas">
+          <b> Phone </b> 
+        </label>
+        <input type = "password" id = "Phone" placeholder = "Enter Phone" name = "pas">
 
         <p> Select user type </p>
         <div>
@@ -33,9 +42,10 @@
           <label for = "pas"> Common user </label>
        </div>
 
-        <button type = "submit" onclick = "window.location.href = '../html/Main.html'"> Change </button>
-        <button type = "reset"> Cancel </button>
       </div>
     </form>
+    <button type = "submit" onclick = "edit('edit')"> Change </button>
+    <button type = "reset"> Cancel </button>
+  <script src="../js/edit.js"></script>
   </body>
 </html>

@@ -3,7 +3,6 @@
 <head>
   <link href = "index.css" rel = "stylesheet">
   <link rel="stylesheet" type="text/css" href="css/login.css">
-  <script src="index.js"></script>
   <title> Wallet </title>
 </head>
   <body>
@@ -14,17 +13,18 @@
 
       <div class = "container">
         <label for = "name">
-          <b>  Username  </b>
+          <b>  Phone  </b>
         </label>
-        <input type = "text" placeholder = "Enter Username" name = "uname" required>
+        <input type = "text" id = "phone" placeholder = "Enter Phone" required>
 
         <label for = "pas">
           <b> Password </b> 
         </label>
-        <input type = "password" placeholder = "Enter Password" name = "pas" required>
+        <input type = "password" id = "password" placeholder = "Enter Password" required>
         <p><a href = "html/CreateUser.html"> Create User </a></p>
-        <button type = "submit" > Login </button>
       </div>
     </form>
+	<button onclick="login('login-form')" type = "submit" > Login </button>
+	<script src="index.js"></script>
   </body>
 </html>

@@ -11,7 +11,9 @@ async function login(id) {
         }
 		
     }).then(async (response) => {
-		if (response.status == 200) {
+        var res = await response.json();
+        if (response.status == 200) {
+			localStorage.token = response['access_token'];
             window.open("./html/Main.html");
         }
         else {
@@ -21,9 +23,6 @@ async function login(id) {
                 Location.reload()
             }
         }
-		return response.json()
-    }).then((data) =>{
-       localStorage.setItem("token" ,token);
-	});
+    });
     return 0;
 }
