@@ -3,17 +3,6 @@ import { useState } from "react";
 import './App.css';
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
-let loginUser = request_body => {
-    return fetch('http://localhost:5000/user/login', {
-        method: "POST",
-		mode: 'cors',
-        body: JSON.stringify(request_body),
-        headers: {'Accept': 'application/json',
-		credentials: 'same-origin'}
-    });
-}
-
-
 const Login = () => {
 	
   const navigate = useNavigate();
@@ -46,6 +35,7 @@ const Login = () => {
       if (response.status == 200) {
 		  response.json().then(datass =>{
 			localStorage.setItem('token', datass['access_token']);
+			localStorage.setItem('UserId', datass['UserId']);
 		    navigate('/Main');
 		  });
       } 

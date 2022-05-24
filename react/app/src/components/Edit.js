@@ -3,8 +3,6 @@ import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 
-
-
 function Edit() {
   const  navigate  = useNavigate();
   const [data, setData] = useState({
@@ -26,11 +24,11 @@ function Edit() {
 	  };
 	  const token = localStorage.getItem('token');
       fetch('http://localhost:5000/user/1', {
-          method: "POST",
+          method: "PUT",
           body: JSON.stringify(datas),
           headers: {'Accept': 'application/json',
-		  'Authorization': 'Basic '+ token
-		             }
+		  'Authorization': 'Bearer '+ token
+		  }
       }).then(response => {
 	    if(response.status == 200){
 		   navigate('/Main');
