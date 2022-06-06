@@ -7,7 +7,7 @@ import Edit from './components/Edit'
 import PurseDel from './components/PurseDel'
 import Purse from './components/Purse'
 import Logout from './components/logout'
-import GetPurse from './components/GetPutse'
+import GetPurse from './components/GetPurse'
 import CreateTransfer from './components/TransferCreate'
 
 import {BrowserRouter,Routes,Route} from "react-router-dom";

@@ -7,7 +7,7 @@ const Main = () => {
 
   return (
     <div className="App">
-	<form className="form">
+	<form data-testid="MainForm" className="form">
       <header className="App-header">
 	    <p className="EditAccout"><Link className="EditAccout" to={"/User/Edit"}>Edit account</Link></p>
 		<p className="CreatePurse"><Link className="CreatePurse" to={"/User/Purse"}>Create purse</Link></p>

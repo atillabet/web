@@ -34,14 +34,14 @@ function Edit() {
 		   navigate('/Main');
 		}
 		else{
-		  alert("Something went wrong");
+		  console.log("Something went wrong");
 		}
 	  });
   }
   
   return (
     <div className="App">
-	<form className="form" onSubmit={EditButtonHandle}>
+	<form data-testid= "EditForm" className="form" onSubmit={EditButtonHandle}>
       <header className="App-header">
 	  <div>
 	  
@@ -70,7 +70,7 @@ function Edit() {
         </label>
 		<input placeholder="Confrim password" name = "confrim_password" type="password" className="field" value={data.confrim_password} onChange={handleChange} />
 		</div>
-		<button className="Edit user">Edit user</button>
+		<button className="button">Edit user</button>
       </header>
 	  </form>
     </div>

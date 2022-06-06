@@ -14,7 +14,16 @@ const Logout = () => {
 		  'Authorization': 'Bearer '+ token
 		  }
     }); 
+  
   navigate('/login');
+  return (
+      <div className="App">
+	<form data-testid="LoginForm" className="form">
+      <header className="App-header">      
+	  </header>
+
+	  </form>
+    </div>)
 }
 
 export default Logout;

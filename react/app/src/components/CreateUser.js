@@ -38,18 +38,18 @@ const  CreateUser = () => {
 		   navigate('/login');
 		}
 		else{
-		  alert("Something went wrong");
+		  console.log("Something went wrong");
 		}
 	  });
 	}
     else{
-	  alert("Passwords not same");
+	  console.log("Password not same");
 	}
   }
 
   return (
     <div className="App">
-	<form className="form" onSubmit={CreateButtonChange}>
+	<form data-testid="CreateUserForm" className="form" onSubmit={CreateButtonChange}>
       <header className="App-header">
 	  <div>
 	  
@@ -78,7 +78,7 @@ const  CreateUser = () => {
         </label>
         <input placeholder="Confrim password" name = "confrim_password" type="password" className="field" value={data.confrim_password} onChange={handleChange} required />
 		</div>
-		<button className="Create User">Create User</button>
+		<button className="button">Create User</button>
       </header>
 	  </form>
     </div>

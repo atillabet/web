@@ -12,13 +12,9 @@ const Login = () => {
   })
   
   const handleChange = e => {
-    setData({...data, [e.target.name]: e.target.value})
   }
   const token = localStorage.getItem('token');
   
-  if(token){
-	  navigate('/Main');
-  }
   const LoginButtonChange = async e => {
 	e.preventDefault();
     let req = {
@@ -40,17 +36,14 @@ const Login = () => {
 		  });
       } 
 	  else {
-        response.text().then((data) => {
-          alert("Something went wrong");
-		  data.clear();
-        });
+          console.log("Something went wrong");
       }
     });
   }
 
   return (
     <div className="App">
-	<form className="form" onSubmit={LoginButtonChange}>
+	<form data-testid="LoginForm" className="form" onSubmit={LoginButtonChange}>
       <header className="App-header">
 	  <div>
         <label>
@@ -64,7 +57,7 @@ const Login = () => {
         <input placeholder="Enter password" name = "password" type="password" className="field" value={data.password} onChange={handleChange} required />
       </div>
 	  <div>
-		<button type = "submit">Login</button>
+		<button className = "button">Login</button>
 	  </div>	
 		<p className="SingUp"><Link className="SingUp" to={"/CreateUser"}>Create User</Link></p>
       </header>

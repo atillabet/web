@@ -37,17 +37,14 @@ const CreateTransfer = () => {
 		  });
       } 
 	  else {
-        response.text().then((data) => {
-          alert("Something went wrong");
-		  data.clear();
-        });
+          console.log("Something went wrong");
       }
     });
   }
 
   return (
     <div className="App">
-	<form className="form" onSubmit={CreateTransfer}>
+	<form data-testid= "TransferCreateForm" className="form" onSubmit={CreateTransfer}>
       <header className="App-header">
 	  <div>
         <label>
@@ -67,7 +64,7 @@ const CreateTransfer = () => {
       
 	  </div>
 	  <div>
-		<button type = "submit">Make transfer</button>
+		<button className="button">Make transfer</button>
 	  </div>	
       </header>
 

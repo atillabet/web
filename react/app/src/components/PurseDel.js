@@ -34,17 +34,14 @@ const PurseDel = () => {
 		  });
       } 
 	  else {
-        response.text().then((data) => {
-          alert("Something went wrong");
-		  data.clear();
-        });
+          console.log("Something went wrong");
       }
     });
   }
 
   return (
     <div className="App">
-	<form className="form" onSubmit={DeletePurse}>
+	<form data-testid= "PurseDelForm" className="form" onSubmit={DeletePurse}>
       <header className="App-header">
 	  <div>
         <label>
@@ -53,7 +50,7 @@ const PurseDel = () => {
         <input placeholder="Enter name" name = "name" type="text" className="field" value={data.name} onChange={handleChange} required />
       </div>
 	  <div>
-		<button type = "submit">Delete purse</button>
+		<button className="button">Delete purse</button>
 	  </div>	
       </header>
 
